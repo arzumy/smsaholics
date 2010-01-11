@@ -1,0 +1,13 @@
+body {
+background: #eee;
+font-family: Helvetica, Arial, sans-serif;
+color: #7c7c7c;
+text-align: center;
+font-size: 100%
+}
+ol, ul { list-style-image:none; list-style-position:outside; list-style-type:none; }
+a:hover, a:active { color:#000000; text-decoration:none; }
+a, a:visited { color:#86B525; text-decoration:none; }
+
+#menu-bar { background-color:#FFFFFF; height: 40px; z-index: 1000; line-height:32px; }
+.main-menu li { float:left; padding-left:20px; }

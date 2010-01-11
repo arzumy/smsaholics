@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Smsaholics - Jenan 9498</title>
+    <%= stylesheet_link_tag "screen", "style", "formtastic", "formtastic_changes", :media=>"screen, projection" %>
+    <%= stylesheet_link_tag "print", :media=>"print" %>
+    <!--[if lt IE 8]>
+      <%= stylesheet_link_tag "ie", :media=>"screen, projection" %>
+    <![endif]-->
+    <%= javascript_include_tag 'jquery', 'application' %>
+  </head>
+  <body>
+    <div class="container">
+      <div id="menu-bar">
+        <ul class="main-menu column prepend-18">
+          <li><a href="/">home</a></li>
+          <li><a href="/users/1/edit">settings</a></li>
+          <li><a href="/logout">logout</a></li>
+        </ul>
+      </div>
+      <div id="content">
+        <%= yield %>
+      </div>
+      <div id="footer" class="small">
+        made lovingly by arzumy
+      </div>
+    </div>
+  </body>
+</html>
