@@ -3,3 +3,4 @@ log/*.log
 tmp/**/*
 config/database.yml
 config/initializers/session_store_ori.rb
+rerun.txt
