@@ -9,23 +9,23 @@
     <!--[if lt IE 8]>
       <%= stylesheet_link_tag "ie", :media=>"screen, projection" %>
     <![endif]-->
-    <%= javascript_include_tag 'jquery', 'application' %>
   </head>
   <body>
-    <div class="container">
-      <div id="menu-bar">
+    <div class="container showgrid">
+      <div id="menu-bar" class="last">
         <ul class="main-menu column prepend-18">
           <li><a href="/">home</a></li>
           <li><a href="/users/1/edit">settings</a></li>
           <li><a href="/logout">logout</a></li>
         </ul>
       </div>
-      <div id="content">
-        <%= yield %>
-      </div>
-      <div id="footer" class="small">
-        made lovingly by arzumy
-      </div>
     </div>
+    <div class="container content">
+      <%= yield %>
+    </div>
+    <div class="container small">
+      made lovingly by arzumy
+    </div>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>

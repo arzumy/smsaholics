@@ -1,0 +1,12 @@
+<div id="sidebar" class="span-6">
+</div>
+<div id="post" class="last">
+  <ul class="messages">
+    <% @messages.each do |message|%>
+      <li>
+        <p class="message"><%= message.body %></p>
+        <p class="message-meta"><%= time_ago_in_words(message.created_at) %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
