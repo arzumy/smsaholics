@@ -7,6 +7,12 @@ class MessagesController < InheritedResources::Base
   end
 
   def create
-    create! {root_url}
+    create! do |success, failure|
+      failure.html do
+        collection
+        render :index
+      end
+      success.html { redirect_to root_url }
+    end
   end
 end

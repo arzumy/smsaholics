@@ -29,4 +29,17 @@ class MessagesControllerTest < ActionController::TestCase
     should_redirect_to("root") { root_url }
   end
 
+  fast_context "POST to create without body" do
+    setup do
+      attributes = Factory.attributes_for(:message)
+      attributes.delete(:body)
+      post :create, :message => attributes
+    end
+
+    should_assign_to(:message)
+    should_assign_to(:messages)
+    should_render_template :index
+    should_not_set_the_flash
+  end
+
 end
