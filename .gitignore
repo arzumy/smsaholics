@@ -6,3 +6,4 @@ config/initializers/session_store.rb
 rerun.txt
 bin/*
 vendor/gems/*
+vendor/bundler_gems
