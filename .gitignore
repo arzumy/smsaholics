@@ -4,3 +4,5 @@ tmp/**/*
 config/database.yml
 config/initializers/session_store.rb
 rerun.txt
+bin/*
+vendor/gems/*
