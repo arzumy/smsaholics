@@ -5,6 +5,3 @@ config/database.yml
 config/initializers/session_store.rb
 config/config.yml
 rerun.txt
-bin/*
-vendor/gems/*
-vendor/bundler_gems
