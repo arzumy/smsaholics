@@ -6,8 +6,11 @@ Installation
 ------------
 Make sure you change the secret key:
 
-  `cp config/initializers/session_store.rb.example config/initializers/session_store.rb`
-  `vi config/initializers/session_store.rb`
+  `cp config/config.yml.example config/config.yml`
+
+  `vi config/config.yml`
+
+Refer to this post for further information [http://almosteffortless.com/2009/06/25/config-vars-and-heroku/](http://almosteffortless.com/2009/06/25/config-vars-and-heroku/ "Config vars and Heroku")
 
 License
 -------

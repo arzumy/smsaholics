@@ -1,0 +1,15 @@
+development:
+  session_key: example_development
+  session_secret: ESl6X3oKM1i1RRrD2QLwUUzz9jr1zxNO
+  domain: http://example.com
+
+test:
+  session_key: example_test
+  session_secret: vrwPpJTvwnMVLP1wTSgqigSl7PMI7QcE
+  domain: http://example.com
+
+production:
+  session_key: # any string identifying your app
+  session_secret: # a random, secret string at least 32 characters long
+  domain: # http://example.com
+  mailer: # noreply@example.com

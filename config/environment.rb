@@ -7,6 +7,16 @@ RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+  # Config vars and Heroku
+  # http://almosteffortless.com/2009/06/25/config-vars-and-heroku/
+  require 'yaml'
+  # support yaml and heroku config vars, preferring ENV for heroku
+  CONFIG = (YAML.load_file('config/config.yml')[RAILS_ENV] rescue {}).merge(ENV)
+  config.action_controller.session = {
+    :key => CONFIG['session_key'],
+    :secret => CONFIG['session_secret']
+  }
+
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
