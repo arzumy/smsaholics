@@ -1,31 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Smsaholics - Jenan 9498</title>
-    <%= stylesheet_link_tag "screen", "style", "formtastic", "formtastic_changes", :media=>"screen, projection" %>
-    <%= stylesheet_link_tag "print", :media=>"print" %>
-    <!--[if lt IE 8]>
-      <%= stylesheet_link_tag "ie", :media=>"screen, projection" %>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="container showgrid">
-      <div id="menu-bar" class="last">
-        <ul class="main-menu column prepend-18">
-          <li><a href="/">home</a></li>
-          <li><a href="/users/1/edit">settings</a></li>
-          <li><a href="/logout">logout</a></li>
-        </ul>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Smsaholics - Jenan 9498</title>
+	<%= stylesheet_link_tag 'screen' %>
+	<!--[if lt IE 7]>
+	  <%= stylesheet_link_tag 'fail' %>
+	  <%= javascript_include_tag 'morefail' %>
+	<![endif]-->
+</head>
+<body>
+  <!-- header -->
+  <div id="header">
+    <div id="header-cnt">
+      <h1>Smsaholics</a></h1>
+    </div>
+    <div id="header-nav">
+      <ul class="clearfix">
+        <li><%= link_to 'Messages', "http://google.com" %></li>
+      </ul>
+    </div>
+    <div id="header-meta">
+      Logged in as
+    </div>
+  </div>
+  <!-- /header -->
+  <!-- wrapper -->
+  <div id="wrapper">
+    <!-- contents -->
+    <div id="content" class="clearfix">
+      <!-- main -->
+      <div id="main">
+        <% %w[notice success error failure].each do |flasher|%>
+          <% if flash[flasher.to_sym] %>
+            <div id="<%= flasher %>" class="mblock">
+              <div class="mblock-cnt">
+                <%= flash[flasher.to_sym] %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+        <%= yield %>
       </div>
+      <!-- /main -->
+
+      <!-- sidebar -->
+      <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>
+      <!-- /sidebar -->
+
     </div>
-    <div class="container content">
-      <%= yield %>
-    </div>
-    <div class="container small">
-      made lovingly by arzumy
-    </div>
-    <%= javascript_include_tag 'application' %>
-  </body>
+    <!-- /contents -->
+  </div>
+  <!-- /wrapper -->
+  <%= javascript_include_tag 'application' %>
+  <small>made lovingly by arzumy. theme credited to <%= link_to "entp", "http://github.com/entp/xtt"%></small>
+</body>
 </html>
