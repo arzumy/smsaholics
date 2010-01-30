@@ -9,10 +9,9 @@ Feature: Post and read message
     Then I should see the following messages:
       | What are you guys up to tonight?  | posted less than a minute ago  |
 
-  @wip
   Scenario: Post a message
     Given I am on the homepage
-    When fill in the following:
+    When I fill in the following:
       | Message | What are you guys up to tonight?  |
     And I press "Post"
     Then I should see the following messages:

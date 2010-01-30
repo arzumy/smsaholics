@@ -11,6 +11,7 @@ class MessagesControllerTest < ActionController::TestCase
       get :index
     end
 
+    should_assign_to(:message)
     should_assign_to(:messages)
     should_respond_with :success
     should_render_template :index

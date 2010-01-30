@@ -1,3 +1,25 @@
+<div class="mblock special">
+  <div class="mblock-hdr">
+    <h3>Say something</h3>
+  </div>
+  <div class="mblock-cnt">
+    <ul class="media-list">
+      <li class="media-item status-form">
+        <% semantic_form_for @message do |semantic_form| %>
+        <% semantic_form.inputs do %>
+          <%= semantic_form.input :body, :label => "Message", :class => "status-entry", :input_html => {:rows => 2, :cols => 55, :class => 'status-entry'}, :required => false %>
+        <% end %>
+        <p class="btns">
+          <% semantic_form.buttons do %>
+            <%= semantic_form.commit_button "Post" %>
+          <% end %>
+        </p>
+        <% end -%>
+      </li>
+    </ul>
+  </div>
+</div>
+
 <div class="mblock">
   <div class="mblock-hdr">
     <h3>Messages</h3>
