@@ -10,6 +10,6 @@ When /^I delete the (\d+)(?:st|nd|rd|th) post_message$/ do |pos|
 end
 
 Then /^I should see the following messages:$/ do |expected_post_messages_table|
-  actual_table = tableish("ul.messages li", "p")
+  actual_table = tableish("div.media-content", "h4,p")
   expected_post_messages_table.diff!(actual_table)
 end

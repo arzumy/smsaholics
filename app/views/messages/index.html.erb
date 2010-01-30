@@ -1,12 +1,21 @@
-<div id="sidebar" class="span-6">
-</div>
-<div id="post" class="last">
-  <ul class="messages">
-    <% @messages.each do |message|%>
-      <li>
-        <p class="message"><%= message.body %></p>
-        <p class="message-meta"><%= time_ago_in_words(message.created_at) %></p>
+<div class="mblock">
+  <div class="mblock-hdr">
+    <h3>Messages</h3>
+  </div>
+  <div class="mblock-cnt">
+    <ol id="timeline" class="media-list">
+    <% @messages.each do |message| -%>
+      <li class="hentry media-item clearfix">
+        <span class="time-span"><%= message.created_at.to_s :time %></span>
+        <div class="media vcard author">
+          <%#NOTE: Avatar placeholder%>
+        </div>
+        <div class="media-content">
+          <h4 class="media-title status"><%= message.body %></h4>
+          <p class="quiet">posted <%=  time_ago_in_words(message.created_at) %> ago</p>
+        </div>
       </li>
-    <% end %>
-  </ul>
+    <% end -%>
+    </ol>
+  </div>
 </div>
