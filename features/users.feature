@@ -12,3 +12,16 @@ Feature: Users management
       | Confirm Password  | password        |
     And I press "Register"
     Then I should see "Welcome, arzumy"
+
+  Scenario: User registration with incomplete inputs
+    Given I am on the homepage
+    When I fill in the following:
+      | Name              | |
+      | Email             | |
+      | Password          | |
+      | Confirm Password  | |
+    And I press "Register"
+    Then I should see error on these fields:
+      | Name              | can't be blank  |
+      | Email             | can't be blank  |
+      | Password          | can't be blank  |
