@@ -57,9 +57,17 @@ end
 # TODO: Add support for checkbox, select og option
 # based on naming conventions.
 #
-When /^(?:|I )fill in the following:$/ do |fields|
-  fields.rows_hash.each do |name, value|
-    When %{I fill in "#{name}" with "#{value}"}
+When /^(?:|I )fill in the following(?: within "([^\"]*)")?:$/ do |selector, fields|
+  if selector
+    with_scope(selector) do
+      fields.rows_hash.each do |name, value|
+        When %{I fill in "#{name}" with "#{value}" within "fieldset"} #TODO: Check why //html scope not found, this is just dirty hack for formtastic
+      end
+    end
+  else
+    fields.rows_hash.each do |name, value|
+      When %{I fill in "#{name}" with "#{value}"}
+    end
   end
 end
 
