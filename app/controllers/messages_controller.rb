@@ -1,4 +1,5 @@
 class MessagesController < InheritedResources::Base
+  before_filter :authenticate_user!, :only => [:create]
   actions :index, :create
 
   def index

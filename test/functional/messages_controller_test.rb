@@ -21,6 +21,8 @@ class MessagesControllerTest < ActionController::TestCase
 
   fast_context "POST to create" do
     setup do
+      @user = Factory(:user)
+      sign_in @user
       attributes = Factory.attributes_for(:message)
       post :create, :message => attributes
     end
@@ -30,8 +32,19 @@ class MessagesControllerTest < ActionController::TestCase
     should_redirect_to("root") { root_url }
   end
 
+  fast_context "POST to create without login" do
+    setup do
+      attributes = Factory.attributes_for(:message)
+      post :create, :message => attributes
+    end
+
+    should_redirect_to("user sign_in") { new_user_session_path(:unauthenticated => true) }
+  end
+
   fast_context "POST to create without body" do
     setup do
+      @user = Factory(:user)
+      sign_in @user
       attributes = Factory.attributes_for(:message)
       attributes.delete(:body)
       post :create, :message => attributes
