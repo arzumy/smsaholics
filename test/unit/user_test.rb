@@ -46,4 +46,9 @@ class UserTest < ActiveSupport::TestCase
       assert user.errors.on(:email)
     end
   end
+
+  def test_should_show_name_when_string
+    user = Factory(:user, :name => "String")
+    assert_equal "String", "#{user}"
+  end
 end

@@ -4,4 +4,8 @@ class User < ActiveRecord::Base
   has_many :messages
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :name, :remember_me
+
+  def to_s
+    self.name
+  end
 end
