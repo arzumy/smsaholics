@@ -1,0 +1,23 @@
+  <div class="sbox">
+    <div class="sbox-wrapper">
+      <div class="sbox-head">
+        <h3>Be a member now!</h3>
+      </div>
+      <div class="sbox-content">
+        <% semantic_form_for user do |semantic_form| %>
+          <% semantic_form.inputs do %>
+            <%= semantic_form.input :name,                  :required => false, :input_html => { :size => 25 } %>
+            <%= semantic_form.input :email,                 :required => false, :input_html => { :size => 25 } %>
+            <%= semantic_form.input :password,              :required => false, :input_html => { :size => 25 } %>
+            <%= semantic_form.input :password_confirmation, :required => false, :input_html => { :size => 25 }, :as => :password, :label => "Confirm Password" %>
+          <% end %>
+          <p class="btns">
+            <% semantic_form.buttons do %>
+              <%= semantic_form.commit_button "Register" %>
+            <% end %>
+          </p>
+        <% end %>
+      </div>
+      <div class="sbox-footer"></div>
+    </div>
+  </div>
