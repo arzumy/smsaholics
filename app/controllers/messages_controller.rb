@@ -9,6 +9,7 @@ class MessagesController < InheritedResources::Base
   end
 
   def create
+    @message = current_user.messages.new(params[:message])
     create! do |success, failure|
       failure.html do
         @user = User.new
