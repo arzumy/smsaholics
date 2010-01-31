@@ -12,6 +12,9 @@ Feature: Users management
       | Confirm Password  | password        |
     And I press "Register"
     Then I should see "Welcome, arzumy"
+    And I should not see "Be a member now!"
+    And I should not see "Already a member? Login now!"
+    And I should see "logout"
 
   Scenario: User registration with incomplete inputs
     Given I am on the homepage
