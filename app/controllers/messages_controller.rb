@@ -10,6 +10,7 @@ class MessagesController < InheritedResources::Base
   def create
     create! do |success, failure|
       failure.html do
+        @user = User.new
         collection
         render :index
       end
