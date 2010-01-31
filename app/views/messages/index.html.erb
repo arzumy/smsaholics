@@ -34,7 +34,7 @@
         </div>
         <div class="media-content">
           <h4 class="media-title status"><%= message.body %></h4>
-          <p class="quiet">posted <%=  time_ago_in_words(message.created_at) %> ago</p>
+          <p class="quiet"><%= "posted by #{message.user} #{time_ago_in_words(message.created_at)} ago" %></p>
         </div>
       </li>
     <% end -%>

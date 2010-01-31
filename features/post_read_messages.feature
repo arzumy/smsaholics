@@ -7,7 +7,7 @@ Feature: Post and read message
     Given a message exists
     And I am on the homepage
     Then I should see the following messages:
-      | What are you guys up to tonight?  | posted less than a minute ago  |
+      | What are you guys up to tonight?  | posted by arzumy less than a minute ago  |
 
   Scenario: Post a message
     Given I am logged in
@@ -16,4 +16,4 @@ Feature: Post and read message
       | Message | What are you guys up to tonight?  |
     And I press "Post"
     Then I should see the following messages:
-      | What are you guys up to tonight?  | posted less than a minute ago  |
+      | What are you guys up to tonight?  | posted by arzumy less than a minute ago  |
