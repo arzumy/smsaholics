@@ -1,7 +1,7 @@
 Feature: Users management
   In order to communicate better with others
   As a guest
-  I want to be able to register and login
+  I want to be able to register
 
   Scenario: User registration
     Given I am on the homepage

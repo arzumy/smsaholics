@@ -44,4 +44,26 @@
 
 <% content_for :sidebar do %>
   <%= render :partial => 'users/registration_form', :locals => { :user => @user } %>
+  <div class="sbox">
+    <div class="sbox-wrapper">
+      <div class="sbox-head">
+        <h3>Already a member? Login now!</h3>
+      </div>
+      <div class="sbox-content login">
+        <% semantic_form_for :user, :url => session_path(:user), :html => {:id => "login-form"} do |semantic_form| %>
+          <% semantic_form.inputs do %>
+            <%= semantic_form.input :email,   :required => false, :input_html => { :size => 25 } %>
+            <%= semantic_form.input :password,:required => false, :input_html => { :size => 25 } %>
+            <%= semantic_form.input :remember_me, :as => :boolean, :value => 1, :required => false %>
+          <% end %>
+          <p class="btns">
+            <% semantic_form.buttons do %>
+              <%= semantic_form.commit_button "Login", :button_html => {:class => "create"} %>
+            <% end %>
+          </p>
+        <% end %>
+      </div>
+      <div class="sbox-footer"></div>
+    </div>
+  </div>
 <% end %>
