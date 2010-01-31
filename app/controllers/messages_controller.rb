@@ -2,7 +2,8 @@ class MessagesController < InheritedResources::Base
   actions :index, :create
 
   def index
-    @message = Message.new
+    @message  = Message.new
+    @user     = User.new
     index!
   end
 

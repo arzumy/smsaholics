@@ -701,13 +701,6 @@ li.daybreak {
   margin-bottom: 9px;
 }
 
-.form input[type=text], .form input[type=password], .form textarea  {
-  font-size: 140%;
-  border: 1px solid #999;
-  border-bottom-color: #bbb;
-  border-right-color: #bbb;
-}
-
 #emails {
   width: 330px;
 }
@@ -819,11 +812,14 @@ p.btns a {
   background-color: #aaa;
 }
 
-.create { padding: 1px 5px 2px; float: right;}
-
+.create { padding: 1px 5px 2px; float: right; border: 1px solid #ccc;}
 .buttons .commit { padding: 5px 5px 25px 2px !important; }
-
-#message_body_input label { display: none;}
+#message_body_input label { display: none; }
+form.formtastic input[type=text], form.formtastic input[type=password], form.formtastic textarea  { font-size: 140%; border: 1px solid #999; border-bottom-color: #bbb; border-right-color: #bbb; }
+form.formtastic ol, form.formtastic ul { list-style:none; }
+form.formtastic fieldset ol li label { display:block; padding-top:.2em; }
+form.formtastic fieldset ol li li label { line-height:100%; padding-top:0; }
+form.formtastic fieldset ol li li label input { line-height:100%; vertical-align:middle; margin-top:-0.1em;}
 
 /* @end */
 

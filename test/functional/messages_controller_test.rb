@@ -13,6 +13,7 @@ class MessagesControllerTest < ActionController::TestCase
 
     should_assign_to(:message)
     should_assign_to(:messages)
+    should_assign_to(:user)
     should_respond_with :success
     should_render_template :index
     should_not_set_the_flash
@@ -38,6 +39,7 @@ class MessagesControllerTest < ActionController::TestCase
 
     should_assign_to(:message)
     should_assign_to(:messages)
+    should_assign_to(:user)
     should_render_template :index
     should_not_set_the_flash
   end
