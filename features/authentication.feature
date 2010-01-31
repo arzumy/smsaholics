@@ -11,3 +11,6 @@ Feature: Users authentication
       | Password  | password        |
     And I press "Login"
     Then I should see "Welcome back!"
+    And I should not see "Be a member now!"
+    And I should not see "Already a member? Login now!"
+    And I should see "logout"

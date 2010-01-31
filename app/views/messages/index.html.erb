@@ -43,6 +43,8 @@
 </div>
 
 <% content_for :sidebar do %>
-  <%= render :partial => 'users/registration_form', :locals => { :user => @user } %>
-  <%= render :partial => 'sessions/login_form' %>
+  <% unless user_signed_in? %>
+    <%= render :partial => 'users/registration_form', :locals => { :user => @user } %>
+    <%= render :partial => 'sessions/login_form' %>
+  <% end %>
 <% end %>
