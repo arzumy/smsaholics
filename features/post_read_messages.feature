@@ -10,7 +10,8 @@ Feature: Post and read message
       | What are you guys up to tonight?  | posted less than a minute ago  |
 
   Scenario: Post a message
-    Given I am on the homepage
+    Given I am logged in
+    And I am on the homepage
     When I fill in the following:
       | Message | What are you guys up to tonight?  |
     And I press "Post"
