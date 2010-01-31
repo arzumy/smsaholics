@@ -1,6 +1,7 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  should_have_many :messages
 
   should "be valid with factory" do
     assert_valid Factory.build(:user)
