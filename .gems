@@ -1,2 +1,4 @@
 formtastic
 inherited_resources
+warden
+devise
