@@ -19,6 +19,19 @@ class MessagesControllerTest < ActionController::TestCase
     should_not_set_the_flash
   end
 
+  fast_context "GET to index with date grouping" do
+    setup do
+      user = Factory(:user)
+      messages = []
+      3.times do |index|
+        2.times { messages << Factory(:message, :user => user, :created_at => index.day.ago) }
+      end
+      get :index
+    end
+
+    should_assign_to(:messages) {Message.all.group_by {|m| m.created_at.beginning_of_day}.sort {|a,b| b <=> a}}
+  end
+
   fast_context "POST to create" do
     setup do
       @user = Factory(:user)

@@ -26,17 +26,26 @@
   </div>
   <div class="mblock-cnt">
     <ol id="timeline" class="media-list">
-    <% @messages.each do |message| -%>
-      <li class="hentry media-item clearfix">
-        <span class="time-span"><%= message.created_at.to_s :time %></span>
-        <div class="media vcard author">
-          <%#NOTE: Avatar placeholder%>
-        </div>
-        <div class="media-content">
-          <h4 class="media-title status"><%= message.body %></h4>
-          <p class="quiet"><%= "posted by #{message.user} #{time_ago_in_words(message.created_at)} ago" %></p>
-        </div>
-      </li>
+    <% @messages.each do |day, messages| -%>
+      <% messages.each_with_index do |message, index| -%>
+        <li class="hentry media-item clearfix">
+          <% if index == 0 %>
+            <p class="day-break">
+              <span class="num"><%= message.created_at.to_s :day_name %></span>
+              <span class="day"><%= message.created_at.to_s :monthday %></span>
+            </p>
+          <% else  %>
+            <span class="time-span"><%= message.created_at.to_s :time %></span>
+          <% end -%>
+          <div class="media vcard author">
+            <%#NOTE: Avatar placeholder%>
+          </div>
+          <div class="media-content">
+            <h4 class="media-title status"><%= message.body %></h4>
+            <p class="quiet"><%= "posted by #{message.user} #{time_ago_in_words(message.created_at)} ago" %></p>
+          </div>
+        </li>
+      <% end -%>
     <% end -%>
     </ol>
   </div>
