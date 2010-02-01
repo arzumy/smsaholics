@@ -2,3 +2,4 @@ formtastic
 inherited_resources
 warden
 devise
+will_paginate

@@ -33,6 +33,7 @@ Rails::Initializer.run do |config|
     config.gem 'inherited_resources'
     config.gem 'warden'
     config.gem 'devise'
+    config.gem 'will_paginate'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
