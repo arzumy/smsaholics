@@ -22,6 +22,6 @@ class MessagesController < InheritedResources::Base
 
 protected
    def collection
-     @messages ||= end_of_association_chain.paginate(:page => params[:page]).group_by {|m| m.created_at.beginning_of_day}.sort {|a,b| b <=> a}
+     @messages ||= end_of_association_chain.recent.paginate(:page => params[:page]).group_by {|m| m.created_at.beginning_of_day}.sort {|a,b| b <=> a}
    end
 end
