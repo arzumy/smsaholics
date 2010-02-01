@@ -12,6 +12,13 @@ Make sure you change the secret key:
 
 Refer to this post for further information [http://almosteffortless.com/2009/06/25/config-vars-and-heroku/](http://almosteffortless.com/2009/06/25/config-vars-and-heroku/ "Config vars and Heroku")
 
+TODO
+-------
+* Change time to KL
+* User edit profile page
+* User reset password
+* User profile photo
+
 License
 -------
 Copyright (c) 2010 Arzumy MD.
